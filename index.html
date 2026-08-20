@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrbitConnect — Unified Developer Profile</title>
+<meta name="description" content="Aggregate a developer's public footprint across GitHub, npm, and GitLab into one stamped profile passport.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="stage">
+    <header class="masthead">
+      <h1>Orbit<span>Connect</span></h1>
+      <p>one passport, every platform you publish to</p>
+    </header>
+
+    <form id="lookup-form" class="lookup-form">
+      <div class="field">
+        <label for="gh-input">GitHub username</label>
+        <input id="gh-input" type="text" placeholder="e.g. arjayb" autocomplete="off" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="npm-input">npm username <span class="opt">(optional)</span></label>
+        <input id="npm-input" type="text" placeholder="same as GitHub if blank" autocomplete="off" spellcheck="false">
+      </div>
+      <button type="submit" id="stamp-btn">Stamp passport</button>
+    </form>
+    <p id="status-line" class="status-line">Enter a username to build a profile.</p>
+
+    <section id="passport" class="passport hidden" aria-live="polite">
+      <div class="passport-header">
+        <div class="photo" id="passport-photo" aria-hidden="true"></div>
+        <div class="passport-id">
+          <h2 id="passport-name">—</h2>
+          <p id="passport-bio">—</p>
+          <p class="passport-since" id="passport-since"></p>
+        </div>
+      </div>
+
+      <div class="stamps" id="stamps"></div>
+
+      <div class="ledger" id="ledger"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Reads only public data from the GitHub and npm registry APIs. No login, no data stored. <a href="https://github.com/arjayb/OrbitConnect" target="_blank" rel="noopener">Source</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
